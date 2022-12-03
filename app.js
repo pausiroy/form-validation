@@ -37,6 +37,20 @@ function checkInputs() {
     setSuccessFor(email)
   }
 
+  if(passwordValue == "") {
+    setErrorFor(password, "password cannot be blank");
+  } else {
+    setSuccessFor(password);
+  }
+
+  if(password2Value === "") {
+    setErrorFor(password2, "password cannot be blank");
+  } else if (passwordValue !== password2Value){
+    setErrorFor(password2, "password does not match");
+} else {
+    setSuccessFor(password2);
+}
+
 }
 
 function setErrorFor(input, message) {
